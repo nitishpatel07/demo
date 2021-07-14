@@ -1,0 +1,12 @@
+.date {
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  background: none;
+  border-width: 1px;
+  margin-bottom: 1rem;
+  border-color: #fb6062;
+  width: 100%;
+}
+.date::placeholder {
+  color: #fb606286;
+}

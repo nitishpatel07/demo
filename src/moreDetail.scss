@@ -1,0 +1,106 @@
+.detail {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 75.36rem;
+  position: absolute;
+  top: 0rem;
+  right: 0%;
+  display: flex;
+  justify-content: flex-end;
+  .detail-box {
+    z-index: 1;
+    background-color: white;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    padding: 6rem;
+    height: 100%;
+
+    .heading {
+      display: flex;
+      font-size: 3rem;
+      font-weight: 400;
+      justify-content: space-between;
+      margin-bottom: 5rem;
+      .cross {
+        text-decoration: none;
+      }
+    }
+    .detail-form {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      .form-value {
+        font-size: 1.5rem;
+        padding: 1.5rem;
+        background: none;
+        border-width: 1px;
+        margin-bottom: 1rem;
+        border-color: #fb6062;
+        width: 100%;
+        margin-bottom: 3rem;
+      }
+      .label-1 {
+        position: absolute;
+        color: #fb6062;
+        top: -1.1rem;
+        left: 1rem;
+        background-color: white;
+        font-size: 1.5rem;
+      }
+      .label-2 {
+        position: absolute;
+        color: #fb6062;
+        top: 6.75rem;
+        left: 1rem;
+        background-color: white;
+        font-size: 1.5rem;
+      }
+      .label-3 {
+        position: absolute;
+        color: #fb6062;
+        top: 14.75rem;
+        left: 1rem;
+        background-color: white;
+        font-size: 1.5rem;
+      }
+      .label-4 {
+        position: absolute;
+        color: #fb6062;
+        top: 22.75rem;
+        left: 1rem;
+        background-color: white;
+        font-size: 1.5rem;
+      }
+      .label-5 {
+        color: #fb6062;
+        background-color: white;
+        font-size: 1.5rem;
+      }
+      .button {
+        font-family: "Open Sans", sans-serif;
+        padding: 1.5rem;
+        margin-top: 6rem;
+        border: none;
+        font-size: 1.65rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        cursor: pointer;
+        background-color: #fb6062;
+        color: white;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .detail {
+    width: 100%;
+    height: 100rem;
+
+    .detail-box {
+      width: 90%;
+    }
+  }
+}

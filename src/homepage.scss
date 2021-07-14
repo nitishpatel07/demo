@@ -1,0 +1,14 @@
+.homepage {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  margin: 24rem 50rem;
+}
+
+@media (max-width: 640px) {
+  .homepage {
+    font-size: 3.5rem;
+    margin: 38rem 3.75rem;
+  }
+}
