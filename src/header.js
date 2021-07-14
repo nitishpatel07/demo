@@ -23,19 +23,19 @@ const Header = ({ currentUser }) => {
           className={isMobile ? "header-right-mobile" : "header-right"}
           onClick={() => setisMobile(false)}
         >
-          <Link className="options" to="/">
+          <Link className="options" to="/skin">
             SKIN
           </Link>
-          <Link className="options" to="/">
+          <Link className="options" to="/hair">
             HAIR
           </Link>
-          <Link className="options" to="/">
+          <Link className="options" to="/body">
             BODY
           </Link>
-          <Link className="options" to="/">
-            WELNESS
+          <Link className="options" to="/wellness">
+            WELLNESS
           </Link>
-          <Link className="options" to="/">
+          <Link className="options" to="/news">
             NEWS
           </Link>
           {currentUser ? (

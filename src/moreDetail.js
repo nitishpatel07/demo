@@ -76,7 +76,7 @@ class moreDetail extends React.Component {
             <Datepicker />
 
             <Link to="/">
-              <button class="button" type="submit">
+              <button className="button" type="submit">
                 Continue
               </button>
             </Link>

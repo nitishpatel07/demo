@@ -7,9 +7,17 @@ body {
 html {
   font-size: 62.5%;
 }
+.page {
+  font-size: 3.5rem;
+  margin: 34rem 65rem;
+}
 
 @media (max-width: 640px) {
   html {
     font-size: 45%;
+  }
+  .page {
+    font-size: 3.5rem;
+    margin: 34rem 21rem;
   }
 }
