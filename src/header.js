@@ -12,10 +12,13 @@ import {
 import "./header.scss";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import Modal from "react-modal";
+
+Modal.setAppElement("#root");
 
 const Header = ({ currentUser }) => {
   const [isMobile, setisMobile] = useState(false);
-
+  const [modalIsOpen, setModalisOpen] = useState(false);
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
@@ -60,10 +63,31 @@ const Header = ({ currentUser }) => {
               SIGN IN
             </Link>
           )}
-          <Link className="signin" to="">
+
+          <Link onClick={() => setModalisOpen(true)} className="signin">
             <FontAwesomeIcon className="icon" icon={faEnvelope} size="1x" />
             SUBSCRIBE
           </Link>
+
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={() => setModalisOpen(false)}
+            style={{
+              content: {
+                color: "black",
+                height: "16rem",
+                position: "absolute",
+                top: "35rem",
+              },
+            }}
+          >
+            <h1>SUBSCRIBE TO THE CATALYST</h1>
+            <div>
+              <button onClick={() => setModalisOpen(false)}>
+                <FontAwesomeIcon icon={faTimes} />
+              </button>
+            </div>
+          </Modal>
         </div>
       </div>
 

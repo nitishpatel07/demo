@@ -9,6 +9,13 @@ import "aos/dist/aos.css";
 const SignIn = () => {
   const [userCredentials, setCredentials] = useState({ mobile: "", otp: "" });
 
+  const [modal, setModal] = useState(false);
+  if (modal) {
+    document.body.classList.add("active-modal");
+  } else {
+    document.body.classList.remove("active-modal");
+  }
+
   const { mobile, otp } = userCredentials;
 
   const handleChange = (event) => {
@@ -97,26 +104,37 @@ const SignIn = () => {
             required
             onChange={handleChange}
           />
-          <button className="button" type="submit">
+          <button
+            onClick={() => setModal(true)}
+            className="button"
+            type="submit"
+          >
             Submit
           </button>
         </form>
 
-        <form className="number" onSubmit={onSubmitOTP}>
-          <div className="otp-input">
-            <input
-              className="form-value"
-              type="text"
-              name="otp"
-              required
-              onChange={handleChange}
-            />
-          </div>
+        {modal && (
+          <div className="modal">
+            <div onClick={() => setModal(false)} className="overlay"></div>
+            <div data-aos="fade-left" className="modal-content">
+              <form className="number" onSubmit={onSubmitOTP}>
+                <div className="otp-input">
+                  <input
+                    className="form-value"
+                    type="text"
+                    name="otp"
+                    required
+                    onChange={handleChange}
+                  />
+                </div>
 
-          <button className="button" type="submit">
-            Submit otp
-          </button>
-        </form>
+                <button className="button" type="submit">
+                  Submit otp
+                </button>
+              </form>
+            </div>
+          </div>
+        )}
 
         <label className="label-continue">or continue with</label>
         <button className="button-social" onClick={signInWithGoogle}>
