@@ -3,7 +3,12 @@ import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "./logo.svg";
 import { auth } from "./firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faTimes,
+  faUser,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 import "./header.scss";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -51,9 +56,14 @@ const Header = ({ currentUser }) => {
             </div>
           ) : (
             <Link className="signin" to="/signin">
+              <FontAwesomeIcon className="icon" icon={faUser} size="sm" />
               SIGN IN
             </Link>
           )}
+          <Link className="signin" to="">
+            <FontAwesomeIcon className="icon" icon={faEnvelope} size="1x" />
+            SUBSCRIBE
+          </Link>
         </div>
       </div>
 

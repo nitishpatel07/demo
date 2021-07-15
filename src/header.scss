@@ -31,6 +31,9 @@
     border: 1.5px solid #fb6062;
     color: #fb6062;
     padding: 1rem;
+    .icon {
+      margin-right: 1rem;
+    }
   }
   .mobile-menu-icon {
     display: none;
@@ -65,7 +68,7 @@
     .signin {
       color: rgb(59, 59, 59);
       font-size: 2.5rem;
-      width: 41%;
+      width: 50%;
       padding: 2.75rem;
       display: block;
       cursor: pointer;
@@ -74,6 +77,12 @@
       border: 1.5px solid #fb6062;
       color: #fb6062;
       padding: 1.75rem;
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      .icon {
+        margin-right: 1rem;
+      }
     }
     .mobile-menu-icon {
       display: block;
