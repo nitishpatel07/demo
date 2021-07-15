@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "./logo.svg";
 import { auth } from "./firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./header.scss";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Header = ({ currentUser }) => {
   const [isMobile, setisMobile] = useState(false);
+
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
+
   return (
     <div className="header">
-      <div className="header-left">
+      <div data-aos="fade-right" className="header-left">
         <Link className="logo-container" to="/">
           <Logo className="logo" />
         </Link>

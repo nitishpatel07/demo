@@ -5,7 +5,7 @@ import Header from "./header";
 import HomePage from "./homepage";
 import SignIn from "./signIn";
 import { Switch, Route, Redirect } from "react-router-dom";
-import moreDetail from "./moreDetail";
+import MoreDetail from "./moreDetail";
 import "./App.css";
 
 const Skin = () => (
@@ -51,19 +51,12 @@ class App extends React.Component {
   componentDidMount() {
     this.unsubscribeFromAuth = auth.onAuthStateChanged((user) => {
       this.setState({ currentUser: user });
-
-      // console.log(user);
     });
   }
 
   componentWillUnmount() {
     this.unsubscribeFromAuth();
   }
-
-  handleChange = (event) => {
-    const { value, name } = event.target;
-    this.setState({ [name]: value });
-  };
 
   render() {
     return (
@@ -81,7 +74,7 @@ class App extends React.Component {
               )
             }
           />
-          <Route path="/moredetail" component={moreDetail} />
+          <Route path="/moredetail" component={MoreDetail} />
           <Route path="/skin" component={Skin} />
           <Route path="/hair" component={Hair} />
           <Route path="/body" component={Body} />

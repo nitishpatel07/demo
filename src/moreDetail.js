@@ -1,90 +1,93 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Datepicker from "./datePicker";
 import "./moreDetail.scss";
 import { Link } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
-class moreDetail extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      mobile: "",
-      email: "",
-      fullName: "",
-      Password: "",
-    };
-  }
+const MoreDetail = () => {
+  const [userData, setData] = useState({
+    mobile: "",
+    email: "",
+    fullName: "",
+    Password: "",
+  });
 
-  handleSubmit = (event) => {
+  const { mobile, email, fullName, Password } = userData;
+
+  const handleSubmit = (event) => {
     event.preventDefault();
-    this.setState({ mobile: "", email: "", fullName: "", Password: "" });
+    setData({ mobile: "", email: "", fullName: "", Password: "" });
   };
 
-  handleChange = (event) => {
+  const handleChange = (event) => {
     const { value, name } = event.target;
-    this.setState({ [name]: value });
+    setData({ [name]: value });
   };
 
-  render() {
-    return (
-      <div className="detail">
-        <div className="detail-box">
-          <div className="heading">
-            <span className="signin">A few more details</span>
-            <Link className="cross" to="/">
-              &#10006;
-            </Link>
-          </div>
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
 
-          <form className="detail-form" onSubmit={this.handleSubmit}>
-            <label className="label-1">Mobile Number</label>
-            <input
-              className="form-value"
-              type="text"
-              name="mobile"
-              value={this.state.mobile}
-              onChange={this.handleChange}
-              required
-            />
-            <label className="label-2">Email</label>
-            <input
-              className="form-value"
-              name="email"
-              type="email"
-              value={this.state.email}
-              onChange={this.handleChange}
-              required
-            />
-            <label className="label-3">Full Name</label>
-            <input
-              className="form-value"
-              name="fullName"
-              type="text"
-              value={this.state.fullName}
-              onChange={this.handleChange}
-              required
-            />
-            <label className="label-4">Password</label>
-            <input
-              className="form-value"
-              name="Password"
-              type="password"
-              value={this.state.Password}
-              onChange={this.handleChange}
-              required
-            />
-            <label className="label-5">Date of Birth</label>
-            <Datepicker />
-
-            <Link to="/">
-              <button className="button" type="submit">
-                Continue
-              </button>
-            </Link>
-          </form>
+  return (
+    <div className="detail">
+      <div data-aos="fade-left" className="detail-box">
+        <div className="heading">
+          <span className="signin">A few more details</span>
+          <Link className="cross" to="/">
+            &#10006;
+          </Link>
         </div>
-      </div>
-    );
-  }
-}
 
-export default moreDetail;
+        <form className="detail-form" onSubmit={handleSubmit}>
+          <label className="label-1">Mobile Number</label>
+          <input
+            className="form-value"
+            type="text"
+            name="mobile"
+            value={mobile}
+            onChange={handleChange}
+            required
+          />
+          <label className="label-2">Email</label>
+          <input
+            className="form-value"
+            name="email"
+            type="email"
+            value={email}
+            onChange={handleChange}
+            required
+          />
+          <label className="label-3">Full Name</label>
+          <input
+            className="form-value"
+            name="fullName"
+            type="text"
+            value={fullName}
+            onChange={handleChange}
+            required
+          />
+          <label className="label-4">Password</label>
+          <input
+            className="form-value"
+            name="Password"
+            type="password"
+            value={Password}
+            onChange={handleChange}
+            required
+          />
+          <label className="label-5">Date of Birth</label>
+          <Datepicker />
+
+          <Link to="/">
+            <button className="button" type="submit">
+              Continue
+            </button>
+          </Link>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default MoreDetail;
