@@ -10,7 +10,7 @@ import "./App.css";
 
 const Skin = () => (
   <div>
-    <h1 className="page">SKIN PAGE</h1>
+    <h1 className="page">SKIN PAG</h1>
   </div>
 );
 
